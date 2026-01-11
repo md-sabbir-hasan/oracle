@@ -1,0 +1,51 @@
+select salary
+from employees
+where job_id ='IT_PROG';
+
+select employee_id, last_name
+from employees
+where last_name like '%u%';
+
+select employee_id, last_name
+from employees
+where department_id = any(select department_id
+from employees
+where last_name like '_%u%_');
+
+
+
+
+select last_name, department_id, job_id
+from employees natural join departments
+where location_id=1700;
+
+
+select e.last_name, e.department_id, e.job_id, d.location_id
+from employees e join departments d
+on (e.department_id=d.department_id)
+where location_id=1700;
+
+select e.last_name, e.department_id, e.job_id, d.location_id
+from employees e join departments d
+on (e.department_id=d.department_id)
+where d.department_id = all(select department_id
+from departments
+where location_id=1700);
+
+
+
+
+select last_name, salary
+from employees
+where manager_id = any(select employee_id
+from employees where last_name='King');
+
+
+select* from retired_employees;
+
+select job_id
+from employees
+union
+select job_id
+from retired_employees;
+
