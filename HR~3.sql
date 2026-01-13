@@ -36,6 +36,7 @@ from employees
 where salary > 12000)
 GROUP BY department_id;
 
+
 select salary
 from employees
 where salary > 12000;
