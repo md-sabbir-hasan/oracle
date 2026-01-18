@@ -44,3 +44,27 @@ INSERT INTO  emp1122(emp_id, emp_name, emp_email, emp_salary, emp_cell )
 VALUES (stu_sq_stu_id.nextval, 'sabbir', 'sabbirr@gmail.com', 500000.50, '01744323216');
 INSERT INTO  emp1122(emp_id, emp_name, emp_email, emp_salary, emp_cell )
 VALUES (stu_sq_stu_id.nextval, 'mahabub', 'maahabubb@gmail.com', 700000.50, '01525465155');
+
+
+CREATE SEQUENCE emp_sq_emp_id 
+    START WITH 86500
+    INCREMENT BY 1
+    MAXVALUE 999999999;
+    
+    INSERT INTO  emp1122(emp_id, emp_name, emp_email, emp_salary, emp_cell )
+    VALUES (emp_sq_emp_id.nextval, 'sabbir', 
+    'saabbiirr@gmail.com', 500000.50, '01743232163');
+    
+    
+    
+create table employee_dem (
+eid NUMBER  GENERATED ALWAYS AS IDENTITY,
+ename VARCHAR2(26) not null, 
+salary NUMBER(10) not null,
+hire_date date not null,
+address VARCHAR2(50) not null,
+CONSTRAINT hr_emp1294187_pk primary key(eid)
+
+);
+
+commit;
