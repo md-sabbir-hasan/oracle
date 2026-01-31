@@ -27,7 +27,29 @@ select avg(salary)
 from employees
 where job_id like 'SA%';
 
+--perfect
+
+select avg(e.salary)
+from employees e
+join departments d
+on e.department_id = d.department_id
+where department_name like 'Sales%';
+
 --5
 select First_name, hire_date
 from employees
 order by hire_date;
+
+
+
+select job_id
+from employees
+where job_id like 'SA%';
+
+
+SELECT
+    * FROM departments;
+    
+SELECT
+    * FROM employees;
+    
